@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une commande{% endblock %}
+
+{% block body %}
+    <style>
+        .commande-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .commande-container input {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .commande-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .commande-header input {
+            flex: 1;
+        }
+
+        .commande-articles {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .commande-articles select, .commande-articles input {
+            flex: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .commande-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn-primary, .btn-success {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #00AEEF;
+            color: #fff;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="commande-container">
+        <div class="commande-header">
+            <input type="text" placeholder="Nom" value="Ndiaye1">
+            <input type="text" placeholder="Téléphone" value="778671011">
+            <input type="text" placeholder="Adresse" value="Dakar | Point E | Villa001">
+        </div>
+
+        <div class="commande-articles">
+            <select>
+                <option>Choisir un article</option>
+                <!-- Ajouter les options des articles dynamiquement -->
+            </select>
+            <input type="number" placeholder="Prix" value="0">
+            <input type="number" placeholder="Quantité" value="0">
+            <button class="btn-success">Ajouter</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Article</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Montant</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ajouter les articles dynamiquement ici -->
+            </tbody>
+        </table>
+
+        <div class="commande-footer">
+            <div class="total">Total: 0.0</div>
+            <button class="btn-primary">Valider la Commande</button>
+        </div>
+    </div>
+{% endblock %}
